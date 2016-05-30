@@ -21,7 +21,7 @@ If that is ok, then launch [mongodb_store](http://wiki.ros.org/mongodb_store) us
 roslaunch mongodb_store mongodb_store.launch db_path:=`rospack find planning_tutorial`/db
 ```
 
-### MORSE Simulation
+## MORSE Simulation
 
 In another terminal, launch our simplified simulation of the [Transport Systems Catapult](http://ts.catapult.org.uk) (TSC). 
 
@@ -29,7 +29,7 @@ In another terminal, launch our simplified simulation of the [Transport Systems 
 roslaunch strands_morse tsc_morse.launch 
 ```
 
-### 2D and Topological Navigation
+## 2D and Topological Navigation
 
 We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation, you must add this mapt to the mongodb store. Do it with the following command:
 
@@ -56,6 +56,44 @@ rviz -d `rospack find planning_tutorial`/plan_tut.rviz
 ```
 
 If you click on a green arrow in a topological node, the robot should start working its way there. Feel free to add whatever extra visualisation parts you want to this (or ask us what the various bits are if you're new to robotics).
+
+## Edge Prediction and MDP Planning
+
+For this tutorial we're going to interfere with the expected duration and success probabilities for navigating edges in the topological map. Usually these are computed from data gathered as navigation happens, but for now we're going to fix them. To launch a node which reports fixed predictions for map edges, do the following in a new terminal (the argument is the file which contains the values to be reported):
+
+```bash
+rosrun topological_navigation manual_edge_predictions.py `rospack find planning_tutorial`/maps/plan_tut_edges.yaml
+```
+
+Once this is running you can launch the MDP-based task executive system in (yet another!) new terminal:
+
+```bash
+roslaunch task_executor mdp-executor.launch 
+```
+
+
+# Exercise 1a
+
+With all this up and running, you're now ready to give the robot some tasks. For now we're only going to worry about navigation tasks, i.e. reaching a node in the topological graph. If you open up the file `$WS_ROOT_DIR/src/planning_tutorial/scripts/ltl_nav.py` you will see some code which creates an MDP task to achieve an LTL goal. You can execute this file as follows:
+
+```bash
+rosrun planning_tutorial ltl_nav.py
+```
+
+As this runs you should see the robot move around, as is appropriate for the task (i.e. following the optimal policy given the edge predictions). Parts of the policy are visualised as large arrows in rviz under the `MarkerArray` topic `topological_edges_policies` (this is part of the preconfigured rviz file you launched above). 
+
+The important part of this file is the goal specification, i.e.:
+
+```python
+goal_formula = '(F "WayPoint4")'
+```
+
+In this case `F` means "eventually" and `"WayPoint4"` stands for the robot reaching `WayPoint4`. Try editing this formula to try more complex goals involving other waypoints, LTL operators or Boolean connectives. **TASK FOR DAVE/BRUNO: add a list of valid ones**
+
+
+# Exercise 1b
+
+So far the robot is using the default, static edge durations and probabilities which we provided earlier. Now we'll play with these probabilities to observe the changes in the robot's behaviour. If you kill the `manual_edge_predictions.py` node (`CTRL-c` in it's terminal) then edit the yaml file  `$WS_ROOT_DIR/src/planning_tutorial/maps/plan_tut_edges.yaml` you can alter the expected duration (in seconds) and the success probability of each edge in the map. After you've made your edits, restart the node as before and check if the robot creates policies which respect the new edge information you provided.
 
 
 
