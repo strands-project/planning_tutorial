@@ -1,5 +1,58 @@
 - meta:
     map: tsc2015
+    node: WayPoint0
+    pointset: plan_tut
+  node:
+    edges:
+    - action: move_base
+      edge_id: WayPoint0_WayPoint1
+      inflation_radius: 0.0
+      map_2d: tsc2015
+      node: WayPoint1
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    - action: move_base
+      edge_id: WayPoint0_WayPoint4
+      inflation_radius: 0.0
+      map_2d: tsc2015
+      node: WayPoint4
+      recovery_behaviours_config: ''
+      top_vel: 0.55
+    localise_by_topic: ''
+    map: tsc2015
+    name: WayPoint0
+    pointset: plan_tut
+    pose:
+      orientation:
+        w: 0.592101275921
+        x: 0.0
+        y: 0.0
+        z: -0.805863559246
+      position:
+        x: 2.68063139915
+        y: 1.18782043457
+        z: 0.0
+    verts:
+    - x: 0.689999997616
+      y: 0.287000000477
+    - x: 0.287000000477
+      y: 0.689999997616
+    - x: -0.287000000477
+      y: 0.689999997616
+    - x: -0.689999997616
+      y: 0.287000000477
+    - x: -0.689999997616
+      y: -0.287000000477
+    - x: -0.287000000477
+      y: -0.689999997616
+    - x: 0.287000000477
+      y: -0.689999997616
+    - x: 0.689999997616
+      y: -0.287000000477
+    xy_goal_tolerance: 0.3
+    yaw_goal_tolerance: 0.1
+- meta:
+    map: tsc2015
     node: WayPoint1
     pointset: plan_tut
   node:
@@ -12,10 +65,10 @@
       recovery_behaviours_config: ''
       top_vel: 0.55
     - action: move_base
-      edge_id: WayPoint1_WayPoint4
+      edge_id: WayPoint1_WayPoint0
       inflation_radius: 0.0
       map_2d: tsc2015
-      node: WayPoint4
+      node: WayPoint0
       recovery_behaviours_config: ''
       top_vel: 0.55
     localise_by_topic: ''
@@ -24,13 +77,13 @@
     pointset: plan_tut
     pose:
       orientation:
-        w: 0.582128095134
+        w: 0.582128107548
         x: 0.0
         y: 0.0
-        z: -0.8130970919
+        z: -0.813097119331
       position:
-        x: 2.05609265302
-        y: -0.853661328315
+        x: 1.22112560272
+        y: -3.3064622879
         z: -1.38777878078e-17
     verts:
     - x: 0.689999997616
@@ -96,8 +149,8 @@
         y: 1.89457538546e-09
         z: -0.819359242916
       position:
-        x: -4.55171871185
-        y: -1.11931049824
+        x: -4.65903759003
+        y: -1.41350495815
         z: -2.08166817117e-17
     verts:
     - x: 0.689999997616
@@ -144,13 +197,13 @@
     pointset: plan_tut
     pose:
       orientation:
-        w: 0.815381028814
+        w: 0.81538105011
         x: 0.0
         y: 0.0
-        z: 0.578924673727
+        z: 0.578924655914
       position:
-        x: -10.0899365901
-        y: 2.71775043836
+        x: -10.5412187576
+        y: 0.675468862057
         z: 0.0
     verts:
     - x: 0.689999997616
@@ -185,10 +238,10 @@
       recovery_behaviours_config: ''
       top_vel: 0.55
     - action: move_base
-      edge_id: WayPoint4_WayPoint1
+      edge_id: WayPoint4_WayPoint0
       inflation_radius: 0.0
       map_2d: tsc2015
-      node: WayPoint1
+      node: WayPoint0
       recovery_behaviours_config: ''
       top_vel: 0.55
     localise_by_topic: ''
@@ -197,13 +250,13 @@
     pointset: plan_tut
     pose:
       orientation:
-        w: 0.98480168992
+        w: 0.984801709652
         x: 0.0
         y: 0.0
-        z: -0.173682559665
+        z: -0.173682555556
       position:
-        x: -5.09707973569
-        y: 3.9877865125
+        x: -9.49646663666
+        y: 5.43227052689
         z: -6.93889390391e-18
     verts:
     - x: 0.689999997616

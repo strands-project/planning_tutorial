@@ -3,7 +3,7 @@
 In this first exercise you will use our MDP/LTL planning framework to make the robot drive around the map, and also play with the edges of the underlying map to see how different long-term robot experiences influence its behaviour when creating navigation policies.
 
 
-# Backgroud
+# Background
 
 You must first run some basic elements from the STRANDS system. You should ideally run each of these in a separate terminal where you have sourced both the ROS and your local workspace `setup.bash` files, as described in [tutorial_prep.md](./tutorial_prep.md). 
 
@@ -44,3 +44,19 @@ rosrun topological_utils list_maps
 ```
 
 If this was successful you can launch the 2D (amcl and move_base) and topological localisation and navigation for your simulated robot.
+
+```bash
+roslaunch planning_tutorial tsc_navigation.launch
+```
+
+To see everything running, launch the ROS visualisation tool `rviz` with the provided config file:
+
+```bash
+rviz -d `rospack find planning_tutorial`/plan_tut.rviz
+```
+
+If you click on a green arrow in a topological node, the robot should start working its way there. Feel free to add whatever extra visualisation parts you want to this (or ask us what the various bits are if you're new to robotics).
+
+
+
+
