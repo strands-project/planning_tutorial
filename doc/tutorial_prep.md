@@ -45,7 +45,7 @@ git clone https://github.com/strands-project/planning_tutorial.git
 mkdir planning_tutorial/db
 ```
 
-Finally, if that was all successful, you should be able to build your workspace using [catkin tools](http://catkin-tools.readthedocs.io) (you can also use `catkin_make` if you prefer than approach).
+Finally, if that was all successful, you should be able to build your workspace using [catkin tools](http://catkin-tools.readthedocs.io) (you can also use `catkin_make` if you prefer that approach).
 
 ```bash
 catkin build
@@ -54,7 +54,7 @@ catkin build
 Assuming that was all successful you now need to source your workspace so you have access to the packages there. For this you can do 
 
 ```bash
-source $WS_ROOT_DIR/devel/setup.bash`
+source $WS_ROOT_DIR/devel/setup.bash
 ```
 
 (e.g. `source ~/rob_plan_ws/devel/setup.bash` if you used the default from above)
