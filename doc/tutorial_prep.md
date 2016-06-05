@@ -34,7 +34,6 @@ Next, create the local directory where you will do your work for this tutorial. 
 ```bash
 WS_ROOT_DIR=~/rob_plan_ws
 mkdir -p $WS_ROOT_DIR/src
-cd $WS_ROOT_DIR
 ```
 
 Next clone this repository into the newly created src dir and create a directory within it for our database later on:
@@ -48,6 +47,8 @@ mkdir planning_tutorial/db
 Finally, if that was all successful, you should be able to build your workspace using [catkin tools](http://catkin-tools.readthedocs.io) (you can also use `catkin_make` if you prefer that approach).
 
 ```bash
+cd $WS_ROOT_DIR
+catkin init
 catkin build
 ```
 
