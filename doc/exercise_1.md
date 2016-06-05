@@ -31,7 +31,7 @@ roslaunch strands_morse tsc_morse.launch
 
 ## 2D and Topological Navigation
 
-We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation, you must add this mapt to the mongodb store. Do it with the following command:
+We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation, you must add this map to the mongodb store. Do it with the following command:
 
 ```bash
 rosrun topological_utils load_yaml_map.py `rospack find planning_tutorial`/maps/plan_tut_top_map.yaml
