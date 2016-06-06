@@ -171,3 +171,4 @@ To test your understanding, create a copy of `planning_tutorial sweep_at_waypoin
 # Exercise 2c
 
 What happens when you combine your answer to 2b with the ability to change the probabilities of success on the edges of the topological map? Talk to one of the lecturers for help with getting this running if you want to try it.
+
