@@ -50,6 +50,7 @@ def create_mdp_action_for_sweep(waypoint):
                 status = [GoalStatus(status = GoalStatus.SUCCEEDED)])
 
     unsuccessful_outcome = MdpActionOutcome(probability = (1 - successful_outcome.probability),
+                post_conds = [StringIntPair(string_data = state_var_name, int_data = 0)],
                 duration_probs = [1.0],
                 durations = [120.0], 
                 # if the action server returns with SUCCEEDED then this outcome is used
@@ -96,8 +97,6 @@ if __name__ == '__main__':
 
     goal = ExecutePolicyExtendedGoal(spec = mdp_spec)
 
-    print goal
-
     # contact the execution server
     mdp_exec_client = actionlib.SimpleActionClient('mdp_plan_exec/execute_policy_extended', ExecutePolicyExtendedAction)
     mdp_exec_client.wait_for_server()                                
@@ -106,5 +105,5 @@ if __name__ == '__main__':
     mdp_exec_client.send_goal(goal, feedback_cb = mdp_exec_feedback)
 
     # and wait for the executive to complete it 
-    mdp_exec_client.wait_for_result()
+    print mdp_exec_client.wait_for_result()
 
