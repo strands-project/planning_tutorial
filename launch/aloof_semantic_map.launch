@@ -1,0 +1,13 @@
+<launch>
+  
+    <include file="$(find semantic_map_launcher)/launch/semantic_map.launch"/>
+
+    <include file="$(find soma_manager)/launch/soma2_local.launch">
+        <arg name="map_name" value="aloof"/>
+    </include>   
+
+    <node name="soma_roi_node" pkg="soma_roi_manager" type="soma_roi_node.py" args="aloof" output="screen"/>
+
+    <include file="$(find scitos_ptu)/launch/ptu_action_server_metric_map.launch"/> 
+
+</launch>

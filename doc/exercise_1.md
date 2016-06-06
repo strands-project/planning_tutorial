@@ -33,7 +33,7 @@ If you press the 'h' key in MORSE you can see a list of available keyboard comma
 
 ## 2D and Topological Navigation
 
-We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation, you must add this map to the mongodb store. Do it with the following command:
+We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation in the TSC simulation, you must add this map to the mongodb store. Do it with the following command:
 
 ```bash
 rosrun topological_utils load_yaml_map.py `rospack find planning_tutorial`/maps/plan_tut_top_map.yaml
@@ -71,7 +71,7 @@ rosrun topological_navigation manual_edge_predictions.py `rospack find planning_
 Once this is running you can launch the MDP-based task executive system in (yet another!) new terminal:
 
 ```bash
-roslaunch task_executor mdp-executor.launch 
+roslaunch mdp_plan_exec mdp_plan_exec_extended.launch
 ```
 
 
