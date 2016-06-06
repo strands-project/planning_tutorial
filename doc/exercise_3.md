@@ -1,7 +1,6 @@
-# Exercise 2
+# Exercise 3 - UNFINISHED
 
-In this exercise you will use our MDP/LTL planning framework to get the robot to perform 3D mapping sweeps of a simple. This example connects many of the different elements of our robot system, and may seem complex at first. If something is unclear, or you want more information, please just ask.
-
+In this exercise you will use our MDP/LTL planning framework to encode an object search task in a simple environment. This example connects many of the different elements of our robot system, and may seem complex at first. If something is unclear, or you want more information, please just ask.
 
 
 # Background
@@ -73,23 +72,27 @@ Next launch the MDP-based task executive system in (yet another!) new terminal:
 roslaunch mdp_plan_exec mdp_plan_exec_extended.launch
 ```
 
-## 3D Mapping Nodes
+## Semantic Map
 
-Our 3D mapping framework makes use of an approach called *meta-rooms* which builds 3D maps at waypoints in the environment. Before you run this for the first time you need to create somewhere for the system to store maps. Do this with the following command:
+Our object search framework makes use of a semantic map of the environment  to know where to look for objects. There is a predefined map in this repository. Before you run the semantic mapping launch file for the first time, load the predefined map into mongodb with the following command.
 
 ```bash
 mkdir ~/.semanticMap
+mongorestore --port 62345 `rospack find planning_tutorial`/maps/soma_dump
 ```
 
-If this was successful, you can launch the meta-room nodes with the following command:
+If this was successful, you can launch the semantic map nodes with the following command:
 
 ```bash
-roslaunch planning_tutorial meta_rooms.launch
+roslaunch planning_tutorial aloof_semantic_map.launch
 ```
+
+After you've done this you should see some blue and yellow regions appear in RViz.
 
 # Exercise 2a
 
 In [Exercise 1](./exercise_1.md) you exploited the fact that the execution framework automatically creates an MDP for navigation across the topological map. In this exercise we will extend this MDP with additional actions which connect ROS [actionlib servers](http://wiki.ros.org/actionlib) to actions in the MDP. 
 
+In order for the robot to search for objects, it first needs to execute a *meta-room sweep* in each room where it may need to look. This allows it to build a 3D map of each room for reasoning about supporting surfaces and views.
 
-
+We connect the 
