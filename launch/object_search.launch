@@ -1,0 +1,48 @@
+<launch>
+  <arg name="camera" default="/semcam"/>
+
+  <arg name="soma_map" default="aloof"/>
+  <arg name="soma_conf" default="aloof"/>
+
+  <arg name="db_host" default="localhost" />
+  <arg name="db_port" default="62345" />
+
+  <!-- VIEW PLANNING -->
+  <include file="$(find scitos_moveit_config)/launch/move_group.launch"/>
+  <node name="ptu_fk" pkg="viper" type="ptu_fk"/>
+  <param name="inflation_radius" type="double" value="0.4" />  
+  <param name="views_at_pose" type="int" value="16" />  
+    
+  <!-- VIEW EVALUATION -->  
+  <arg name="robot" default="scitos_simple"/>
+  <include file="$(find viper)/launch/$(arg robot)/_evalaute_views.launch"/>
+
+  <!-- NAV GOAL GENERATOR -->
+  <arg name="map" default="/map"/>
+  <arg name="is_costmap" default="false"/>
+  <include file="$(find nav_goals_generator)/launch/nav_goals_generator.launch">
+    <arg name="map" value="$(arg map)"/>
+    <arg name="is_costmap" default="$(arg is_costmap)"/>
+  </include>
+
+  <!-- ACTION SERVER -->
+  <node name="viper_ros" pkg="viper_ros" type="object_search_server.py" output="screen">
+    <param name="camera" type="string" value="$(arg camera)"/>
+    <param name="soma_map" type="string" value="$(arg soma_map)"/>
+    <param name="soma_conf" type="string" value="$(arg soma_conf)"/>
+    <param name="num_of_views" type="int" value="10" /> 
+    <!-- NOT USED!!! Needed by PerceptionPeople to know how long one view should take --> 
+    <param name="time_window" type="int" value="120" /> 
+    <!-- Needed by PerceptionPeople to know how long one view should take --> 
+    <param name="min_coverage" type="double" value="0.9" />	
+    <param name="time_window" type="int" value="120" />
+    <param name="best_m" type="int" value="20"/>	 <!-- max plan length -->
+    <param name="num_of_plans" type="int" value="50"/>
+    <param name="plan_length" type="int" value="15"/>   
+    <!-- NOT USED!!!! max plan length -->
+    <param name="rho" type="double" value="1.0"/>
+  </node>
+
+
+
+</launch>

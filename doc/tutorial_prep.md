@@ -25,14 +25,14 @@ The relevant installation steps are copied below for your convenience:
 If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
 You should be all set now!
 
-4. Add the line `source /opt/ros/indigo/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, so this is advisable.
+4. Add the line `source /opt/ros/indigo/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*.
 
 # Configuration
 
 Next, create the local directory where you will do your work for this tutorial. This will contain a database and a [ROS catkin workspace](http://wiki.ros.org/catkin). The following steps will be basic steps we will assume you execute:
 
 ```bash
-WS_ROOT_DIR=~/rob_plan_ws
+export WS_ROOT_DIR=~/rob_plan_ws
 mkdir -p $WS_ROOT_DIR/src
 ```
 
@@ -58,7 +58,7 @@ Assuming that was all successful you now need to source your workspace so you ha
 source $WS_ROOT_DIR/devel/setup.bash
 ```
 
-(e.g. `source ~/rob_plan_ws/devel/setup.bash` if you used the default from above)
+(e.g. `source ~/rob_plan_ws/devel/setup.bash` if you used the default from above). As with the other `setup.bash` file mentioned above, you need to source this file in every terminal you open, therefore it is *highly advisable* to add this command to the end of your `.bashrc` file so that it is done automatically. You can test if the file was sourced by running `roscd` (with no arguments). It everything was sourced correctly, this should take you to the directory `$WS_ROOT_DIR/devel/`.
 
 
 # Tutorial Packages

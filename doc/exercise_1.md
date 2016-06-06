@@ -29,6 +29,8 @@ In another terminal, launch our simplified simulation of the [Transport Systems 
 roslaunch strands_morse tsc_morse.launch 
 ```
 
+If you press the 'h' key in MORSE you can see a list of available keyboard commands.
+
 ## 2D and Topological Navigation
 
 We have predefined a simple topological map for you to use in this tutorial. The first time (and only the first time!) you want to use topological navigation, you must add this map to the mongodb store. Do it with the following command:
@@ -56,6 +58,7 @@ rviz -d `rospack find planning_tutorial`/plan_tut.rviz
 ```
 
 If you click on a green arrow in a topological node, the robot should start working its way there. Feel free to add whatever extra visualisation parts you want to this (or ask us what the various bits are if you're new to robotics).
+
 
 ## Edge Prediction and MDP Planning
 
