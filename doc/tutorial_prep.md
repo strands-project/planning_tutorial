@@ -16,7 +16,7 @@ The relevant installation steps are copied below for your convenience:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
         2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/repos/release`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install ros-indigo-desktop-full ros-indigo-strands-desktop python-catkin-tools ros-indigo-semantic-map-launcher`
+    4. install required packages: `sudo apt-get install ros-indigo-desktop-full ros-indigo-strands-desktop python-catkin-tools ros-indigo-semantic-map-launcher ros-indigo-door-pass`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/indigo/setup.bash`
