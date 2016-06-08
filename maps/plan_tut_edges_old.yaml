@@ -7,52 +7,40 @@
 - edge_id: WayPoint1_WayPoint2
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint1_WayPoint0
-  duration: 10.0
-  success_probability: 1.0  
 - edge_id: WayPoint1_WayPoint2
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint1_WayPoint3
+- edge_id: WayPoint1_WayPoint0
   duration: 10.0
   success_probability: 1.0
 - edge_id: WayPoint2_WayPoint1
   duration: 10.0
   success_probability: 1.0
+- edge_id: WayPoint2_WayPoint5
+  duration: 10.0
+  success_probability: 1.0
 - edge_id: WayPoint2_WayPoint3
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint3_WayPoint0
+- edge_id: WayPoint2_WayPoint6
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint3_WayPoint1
-  duration: 10.0
-  success_probability: 0.1
 - edge_id: WayPoint3_WayPoint2
   duration: 10.0
-  success_probability: 0.1
+  success_probability: 1.0
 - edge_id: WayPoint3_WayPoint4
   duration: 10.0
   success_probability: 0.1
-- edge_id: WayPoint3_WayPoint6
-  duration: 10.0
-  success_probability: 0.1
-- edge_id: WayPoint3_WayPoint8
-  duration: 10.0
-  success_probability: 0.1
-- edge_id: WayPoint4_WayPoint0
-  duration: 10.0
-  success_probability: 1.0
 - edge_id: WayPoint4_WayPoint3
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint4_WayPoint5
+- edge_id: WayPoint4_WayPoint0
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint4_WayPoint8
+- edge_id: WayPoint5_WayPoint2
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint5_WayPoint4
+- edge_id: WayPoint5_WayPoint6
   duration: 10.0
   success_probability: 1.0
 - edge_id: WayPoint5_WayPoint7
@@ -61,27 +49,15 @@
 - edge_id: WayPoint6_WayPoint5
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint6_WayPoint3
+- edge_id: WayPoint6_WayPoint2
   duration: 10.0
   success_probability: 1.0
 - edge_id: WayPoint6_WayPoint7
   duration: 10.0
   success_probability: 1.0
-- edge_id: WayPoint6_WayPoint8
-  duration: 10.0
-  success_probability: 1.0   
 - edge_id: WayPoint7_WayPoint5
   duration: 10.0
   success_probability: 1.0
 - edge_id: WayPoint7_WayPoint6
-  duration: 10.0
-  success_probability: 1.0
-- edge_id: WayPoint8_WayPoint3
-  duration: 10.0
-  success_probability: 1.0
-- edge_id: WayPoint8_WayPoint4
-  duration: 10.0
-  success_probability: 1.0
-- edge_id: WayPoint8_WayPoint6
   duration: 10.0
   success_probability: 1.0
