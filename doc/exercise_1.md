@@ -93,22 +93,16 @@ goal_formula = '(F "WayPoint2")'
 
 In this case `F` means "eventually" and `"WayPoint2"` stands for the robot being at `WayPoint2`. Try editing this formula to try more complex goals involving other waypoints, LTL operators or Boolean connectives. For inspiration, take a look at the list below:
 
-* ```python goal_formula = '(F "WayPoint2") & (F "WayPoint7") ' ```
+* ``` goal_formula = '(F "WayPoint2") & (F "WayPoint7") ' ```
   Eventually reach `Waypoint2` and eventually reach `WayPoint7`. Choose best ordering to do so.
 
-* ```python
-goal_formula = '(F "WayPoint2") | (F "WayPoint7") '  
-```
+* ```goal_formula = '(F "WayPoint2") | (F "WayPoint7") '  ```
   Eventually reach `Waypoint2` or eventually reach `WayPoint7`. Choose best  one to visit considering your current position.
 
-* ```python
-goal_formula = '(F ("WayPoint2" & (F "WayPoint7"))) '  
-``` 
+* ```goal_formula = '(F ("WayPoint2" & (F "WayPoint7"))) '  ``` 
   Eventually reach `Waypoint2` and eventually reach `WayPoint7`. Choose best  one to visit considering your current position.
 
-* ```python
-goal_formula = '((!"WayPoint7") U "WayPoint5"))) '  
-``` 
+* ```goal_formula = '((!"WayPoint7") U "WayPoint5"))) '  ``` 
   Avoid `WayPoint7` until you reach `WayPoint5`. Compare this policy with  the one obtained for `` '(F "WayPoint5") '  ``.
 
 # Exercise 1b
