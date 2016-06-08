@@ -103,7 +103,8 @@ goal_formula = '(F "WayPoint2") | (F "WayPoint7") '
 ```
 Eventually reach `Waypoint2` or eventually reach `WayPoint7`. Choose best  one to visit considering your current position.
 
-* ```python
+* 
+```python
 goal_formula = '(F ("WayPoint2" & (F "WayPoint7"))) '  
 ``` 
 Eventually reach `Waypoint2` and eventually reach `WayPoint7`. Choose best  one to visit considering your current position.
