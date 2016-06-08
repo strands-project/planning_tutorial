@@ -102,8 +102,13 @@ In this case `F` means "eventually" and `"WayPoint2"` stands for the robot being
 * ```goal_formula = '(F ("WayPoint2" & (F "WayPoint7"))) '  ``` 
   Eventually reach `WayPoint2` and eventually reach `WayPoint7`. Choose best  one to visit considering your current position.
 
-* ```goal_formula = '((!"WayPoint7") U "WayPoint5"))) '  ``` 
+* ```goal_formula = '((!"WayPoint7") U "WayPoint5") '  ``` 
   Avoid `WayPoint7` until you reach `WayPoint5`. Compare this policy with  the one obtained for `` '(F "WayPoint5") '  ``.
+
+* ```goal_formula = '(F ("WayPoint1" & (X "WayPoint2"))) '  ``` 
+  Eventually reach `WayPoint1` and immediately after (`X`) go to `WayPoint2`. This allows us to "tell" the robot to navigate through some edges, e.g., for environmental exploration.
+
+These specifications can also be connected using boolean connectives, e.g.,  ```'((!"WayPoint7") U "WayPoint5") ' &  (F ("WayPoint1" & (X "WayPoint2")))```.
 
 # Exercise 1b
 
