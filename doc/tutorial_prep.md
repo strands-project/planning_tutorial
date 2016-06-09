@@ -10,7 +10,10 @@ To take part in the practical session of the tutorial, you will need to have you
 
 2. Within Ubuntu, follow the instructions at https://github.com/strands-project-releases/strands-releases/wiki#using-the-strands-repository to install both ROS and the STRANDS software packages. We assume a basic understanding of Unix-like operating systems and shell usage here. If you need help using the command line, this might be a good start: https://help.ubuntu.com/community/UsingTheTerminal. 
 The relevant installation steps are copied below for your convenience:
-    1. Enable the ROS repositories: Follow steps 1.1-1.3 in http://wiki.ros.org/indigo/Installation/Ubuntu#Installation. There is no need to do the steps after 1.3.
+    1. Enable the ROS repositories: Follow steps 1.1-1.3 in http://wiki.ros.org/indigo/Installation/Ubuntu#Installation. There is no need to do the steps after 1.3. In short, this is:
+        1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse."
+        2. `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
+        3. `sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116`
     2. Enable the STRANDS repositories:
         1. Add the STRANDS public key to verify packages:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
