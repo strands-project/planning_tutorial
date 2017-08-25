@@ -1,34 +1,34 @@
 # Support
 
-If you have difficulty following the steps in this document, please either contact Nick Hawes (n.a.hawes@cs.bham.ac.uk) or use the gitter chat at https://gitter.im/strands-project/planning_tutorial
+If you have difficulty following the steps in this document, please either contact Bruno Lacerda (b.lacerda@cs.bham.ac.uk) or Nick Hawes (n.a.hawes@cs.bham.ac.uk) or use the gitter chat at https://gitter.im/strands-project/planning_tutorial
 
 # Computer Setup 
 
 To take part in the practical session of the tutorial, you will need to have your own laptop configured with the following software.
 
-1. Install Ubuntu Linux 14.04LTS 64bit on your computer. Please make sure that you have exactly this version installed: 14.04 for 64bit. Download the image from here: http://releases.ubuntu.com/14.04.4/ (the image download is ubuntu-14.04.4-desktop-amd64.iso). Note, that you can perfectly install Ubuntu 14.04 alongside an existing operating system (even on a MacBook), or you could run this in a virtual machine.
+1. Install Ubuntu Linux 16.04LTS 64bit on your computer. Please make sure that you have exactly this version installed: 16.04 for 64bit. Download the image from here: http://releases.ubuntu.com/16.04/ (the image download is ubuntu-16.04.3-desktop-amd64.iso). Note, that you can perfectly install Ubuntu 16.04 alongside an existing operating system (even on a MacBook), or you could run this in a virtual machine.
 
-2. Within Ubuntu, follow the instructions at https://github.com/strands-project-releases/strands-releases/wiki#using-the-strands-repository to install both ROS and the STRANDS software packages. We assume a basic understanding of Unix-like operating systems and shell usage here. If you need help using the command line, this might be a good start: https://help.ubuntu.com/community/UsingTheTerminal. 
+2. Within Ubuntu, follow the instructions at https://github.com/LCAS/rosdistro/wiki to install both ROS Kinetic and the STRANDS software packages. We assume a basic understanding of Unix-like operating systems and shell usage here. If you need help using the command line, this might be a good start: https://help.ubuntu.com/community/UsingTheTerminal. 
 The relevant installation steps are copied below for your convenience:
-    1. Enable the ROS repositories: Follow steps 1.1-1.3 in http://wiki.ros.org/indigo/Installation/Ubuntu#Installation. There is no need to do the steps after 1.3. In short, this is:
+    1. Enable the ROS repositories: Follow steps 1.1-1.3 in http://wiki.ros.org/kinetic/Installation/Ubuntu. There is no need to do the steps after 1.3. In short, this is:
         1. Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse."
         2. `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
-        3. `sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116`
+        3. `sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116`
     2. Enable the STRANDS repositories:
         1. Add the STRANDS public key to verify packages:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
-        2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/repos/release`
+        2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install ros-indigo-desktop-full ros-indigo-strands-desktop python-catkin-tools ros-indigo-semantic-map-launcher ros-indigo-door-pass`
+    4. install required packages: `sudo apt-get install ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-navigation python-catkin-tools`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
-    1. configure ROS: `source /opt/ros/indigo/setup.bash`
+    1. configure ROS: `source /opt/ros/kinetic/setup.bash`
     2. launch the simulator: `roslaunch strands_morse tsc_morse.launch`
     You should see the Morse simulator popping up with our robot platform being configured. 
 If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
 You should be all set now!
 
-4. Add the line `source /opt/ros/indigo/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*.
+4. Add the line `source /opt/ros/kinetic/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*.
 
 # Configuration
 
@@ -44,6 +44,7 @@ Next clone this repository into the newly created src dir and create a directory
 ```bash
 cd $WS_ROOT_DIR/src
 git clone https://github.com/strands-project/planning_tutorial.git
+git clone https://github.com/strands-project/strands_executive.git
 mkdir planning_tutorial/db
 ```
 
