@@ -19,7 +19,7 @@ The relevant installation steps are copied below for your convenience:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
         2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-navigation python-catkin-tools`
+    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-navigation python-catkin-tools`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/kinetic/setup.bash`
@@ -28,7 +28,11 @@ The relevant installation steps are copied below for your convenience:
 If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
 You should be all set now!
 
-4. Add the line `source /opt/ros/kinetic/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*.
+4. Add the line `source /opt/ros/kinetic/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*. Also, source it on the current terminal session:
+
+```bash
+source /opt/ros/kinetic/setup.bash
+```
 
 # Configuration
 
