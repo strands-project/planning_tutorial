@@ -4,6 +4,6 @@
   <include file="$(find strands_morse)/tsc/launch/tsc_nav2d.launch"/>
  
   <!-- Topological navigation -->
-  <include file="$(find planning_tutorial)/launch/reduced_topological_navigation.launch"/> 
+  <include file="$(find planning_tutorial)/launch/topological_navigation.launch"/> 
    
 </launch>

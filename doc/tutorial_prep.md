@@ -19,7 +19,7 @@ The relevant installation steps are copied below for your convenience:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
         2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-navigation python-catkin-tools`
+    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-ui ros-kinetic-strands-navigation python-catkin-tools`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/kinetic/setup.bash`
