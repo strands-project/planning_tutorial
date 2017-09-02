@@ -26,7 +26,7 @@ roslaunch mongodb_store mongodb_store.launch db_path:=`rospack find planning_tut
 In another terminal, launch our simplified simulation of the [Transport Systems Catapult](http://ts.catapult.org.uk) (TSC). 
 
 ```bash
-roslaunch strands_morse tsc_morse.launch 
+roslaunch strands_morse tsc_fast_morse.launch 
 ```
 
 If you press the 'h' key in MORSE you can see a list of available keyboard commands.
