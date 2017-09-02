@@ -42,7 +42,7 @@ In this exercise, we will tackle a more involved planning problem, with more dep
 The goal of this exercise is to have the robot asking people in the environment if they want coffee and, if so, having the robot deliver them a coffee. We will assume that there is a predefined set of people to serve, and that there is a known probability distribution of their location in the environment and their need for coffee. As an example:
 
 
-```bash
+```python
 self.people= ['John', 'Paul']  #people to serve 
 self.initial_location = { 'John':{'WayPoint1':0.8, 'WayPoint2':0.1}, 'Paul':{'WayPoint1':0.3, 'WayPoint7':0.6}}  #distribution of people's location in the environment
 self.wants_coffee = {'John':0.7, 'Paul':0.2} #probability of people wanting coffee
@@ -60,9 +60,9 @@ The overall behaviour we expect from the robot is summarised as:
     1. If no one replies, we assume assume that the person is not there;
     1. If someone replies we assume it was the person the robot was asking the question to;
     1. If the reply was 'yes', then the robot should:
-         1. Go to the coffee room;
-         1. Ask someone to place a coffee on its cupholder;
-         1. Bring the coffee back to the location where the person replied.
+        1. Go to the coffee room;
+        1. Ask someone to place a coffee on its cupholder;
+        1. Bring the coffee back to the location where the person replied.
          
 More specifically, for the example above, a possible run of the system can be:
 
