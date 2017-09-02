@@ -19,9 +19,9 @@ class GetCoffee(object):
         
         self.coffee_wp = 'WayPoint8'  #location of the coffee machine
         
-        self.people= ['John', 'Paul']  #people to serve 
-        self.initial_location = { 'John':{'WayPoint1':0.8, 'WayPoint2':0.1}, 'Paul':{'WayPoint1':0.8, 'WayPoint2':0.1}}  #distribution of people's location in the environment
-        self.wants_coffee = {'John':0.7, 'Paul':0.2} #probability of people wanting coffee
+        self.people= ['John']  #people to serve 
+        self.initial_location = { 'John':{'WayPoint1':0.8, 'WayPoint2':0.1}}  #distribution of people's location in the environment
+        self.wants_coffee = {'John':0.7} #probability of people wanting coffee
         
         # define the mdp action client 
         self.mdp_client = SimpleActionClient('mdp_plan_exec/execute_policy_extended', ExecutePolicyExtendedAction)
@@ -108,7 +108,7 @@ class GetCoffee(object):
                 
          
 
-        ltl_task = "(F (asked_John = 1)) & (F (asked_Paul = 1))"
+        ltl_task = "(F (asked_John = 1))" #hard coded task
         
         #build the mdp spec
         mdp_spec = MdpDomainSpec(vars = mdp_vars, actions = actions, ltl_task = ltl_task)
