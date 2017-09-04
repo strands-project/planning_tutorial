@@ -67,7 +67,7 @@ tmux split-window -v
 tmux select-pane -t 0
 tmux send-keys "roslaunch task_executor mdp-executor.launch combined_sort:=true"
 tmux select-pane -t 1
-tmux send-keys "rosrun coffee_delivery coffee_delivery_fill.py"
+tmux send-keys "rosrun planning_tutorial coffee_delivery_fill.py"
 
 
 
