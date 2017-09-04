@@ -85,19 +85,20 @@ More specifically, for the example above, a possible run of the system can be:
 # Exercise 3a
 
 
-Check [../scripts/coffee_delivery_fill.py](../scripts/coffee_delivery_fill.py) for an implementation of the search and ask for coffee part of this task. Note that it uses an actionlib action server implementing a skill for the MBOT: this action has the robot ask a question, and returns a response according to the human's answer, or a timeout. You can see the definition of the action in [bla bla](../../isr_s/AskQuestion.action).
+Check [../scripts/coffee_delivery_fill.py](../scripts/coffee_delivery_fill.py) for an implementation which already contains the part of the behaviour which searches for people and asks whether they want coffee. Note that it uses an actionlib action server implementing the `AskQuestion` skill for the MBOT. This action has the robot ask a question, and returns a response according to the human's answer or a timeout. You can see the definition of the action in by running `rosmsg show AskQuestionGoal` on the robot.
 
-Run the node a couple of times. Note that with the predefined probabilities, the robot always asks whether John want coffee in WayPoint1 first. This is because even though the ordering of the nodes doesn't change with the ordering of locations for asking whether the user wants coffee, the expected time for task completion does: If the probability of John being in WayPoint2 is very low, it is quicker (in expectation) to try WayPoint1 first, instead of wasting time executing the ask question action when probably no one is there. Increase the probability of John being in WayPoint2 and see how that changes the robot behaviour.
+You should run the above script a couple of times and observe the behaviour. Note that regardless of where the robot starts, with the given probabilities the robot always goes to WayPoint1 first and asks whether John want coffee. This is because the probability of finding John is much higher at WayPoint1 than WayPoint2. Therefore, even though the time to travel to waypoints changes with start location, it is always quicker (in expectation) to try WayPoint1 first, instead of wasting time executing the ask question action at WayPoint2 when probably no one is there. Try increasing the probability of John being in WayPoint2 and see how that changes the robot behaviour.
 
 Call us if you need help understanding the code or have any doubt.
 
 # Exercise 3b
 
-Complete the example file to achieve the full coffee delivery behaviour:
-*  Use the AskQuestion action, changing its arguments, for retrieving and delivering the coffee:
-     * Add an action to the model that, when next to the coffe machine, allows the robot to ask to put a coffee in the cupboard and waits for an 'ok' to be said by the human. If that happens within the timeout, then the robot can assume it is carrying a coffee.
-     * Add actions for delivering the coffee to a person at a waypoint (use the AskQuestion again, similarly to the above) - make sure the robot delivers coffees on the correct waypoint where the person was found.
-* You'll need to add state features that represent:
+Now extend the example file to achieve the full coffee delivery behaviour. We recommend doing this in the following way:
+* Create your own copy of the delivery script file. This is particularly important on the robot since other people might be working on the same set as files.
+*  Using the AskQuestion action with  different arguments, extend the MDP model to create the behaviour of retrieving and delivering the coffee. Some hints for doing this:
+     * Add an action to the MDP model that, when at the waypoint next to the coffee machine, allows the robot to ask for  a coffee to be put in the cup holder, waiting for an 'ok' to be said by the human. If that happens before the timeout, then the robot can assume it is carrying a coffee.
+     * Using the MDP actions for searching for people as a starting point, add actions for delivering the coffee to a person at a waypoint. Make sure the robot delivers coffees at the correct waypoint where the person was found.
+* To implement the above successfully, you'll need to at least add state features that represent:
      * The number of coffees the robot is carrying
      * Whether the coffee has been delivered to each person;
      
