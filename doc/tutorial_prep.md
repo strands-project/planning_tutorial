@@ -23,7 +23,7 @@ The relevant installation steps are copied below for your convenience:
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/kinetic/setup.bash`
-    2. launch the simulator: `roslaunch strands_morse tsc_morse.launch`
+    2. launch the simulator: `roslaunch strands_morse tsc_fast_morse.launch.launch`
     You should see the Morse simulator popping up with our robot platform being configured. 
 If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
 You should be all set now!
