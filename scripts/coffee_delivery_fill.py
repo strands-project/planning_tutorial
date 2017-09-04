@@ -20,7 +20,7 @@ class GetCoffee(object):
         self.coffee_wp = 'WayPoint8'  #location of the coffee machine
         
         self.people= ['John']  #people to serve 
-        self.initial_location = { 'John':{'WayPoint1':0.8, 'WayPoint2':0.1}}  #distribution of people's location in the environment
+        self.initial_location = { 'John':{'WayPoint1':0.8, 'WayPoint2':0.05}}  #distribution of people's location in the environment
         self.wants_coffee = {'John':0.7} #probability of people wanting coffee
         
         # define the mdp action client 
