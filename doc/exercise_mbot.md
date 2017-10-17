@@ -104,6 +104,10 @@ Now extend the example file to achieve the full coffee delivery behaviour. We re
      
 Call us if you need help understanding the code or have any doubt.
 
+# Exercise 3c
+
+See a solution to 3b  [here](../scripts/coffee_delivery_fill.py), and compare it with yours.
+
 
 
 

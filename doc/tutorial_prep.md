@@ -19,11 +19,11 @@ The relevant installation steps are copied below for your convenience:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
         2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-ui ros-kinetic-strands-navigation python-catkin-tools`
+    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-ui ros-kinetic-strands-navigation  ros-kinetic-task-executor python-catkin-tools`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/kinetic/setup.bash`
-    2. launch the simulator: `roslaunch strands_morse tsc_fast_morse.launch.launch`
+    2. launch the simulator: `roslaunch strands_morse tsc_fast_morse.launch`
     You should see the Morse simulator popping up with our robot platform being configured. 
 If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
 You should be all set now!
@@ -48,7 +48,6 @@ Next clone this repository into the newly created src dir and create a directory
 ```bash
 cd $WS_ROOT_DIR/src
 git clone https://github.com/strands-project/planning_tutorial.git
-git clone https://github.com/strands-project/strands_executive.git
 mkdir planning_tutorial/db
 ```
 
