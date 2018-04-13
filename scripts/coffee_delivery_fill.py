@@ -2,7 +2,7 @@
 
 import rospy
 
-from strands_executive_msgs.msg import MdpStateVar, StringIntPair, StringTriple, MdpAction, MdpActionOutcome, MdpDomainSpec, MdpTask, ExecutePolicyExtendedAction, ExecutePolicyExtendedGoal
+from strands_executive_msgs.msg import MdpStateVar, StringIntPair, StringTriple, MdpAction, MdpActionOutcome, MdpDomainSpec, MdpTask, ExecutePolicyAction, ExecutePolicyGoal
 from strands_executive_msgs import mdp_action_utils as mu
 
 from actionlib import SimpleActionClient
@@ -24,7 +24,7 @@ class GetCoffee(object):
         self.wants_coffee = {'John':0.7} #probability of people wanting coffee
         
         # define the mdp action client 
-        self.mdp_client = SimpleActionClient('mdp_plan_exec/execute_policy_extended', ExecutePolicyExtendedAction)
+        self.mdp_client = SimpleActionClient('mdp_plan_exec/execute_policy', ExecutePolicyAction)
         self.mdp_client.wait_for_server()
         
 
@@ -32,7 +32,7 @@ class GetCoffee(object):
         model = self.build_mdp_spec()
 
         # send goal to mdp action server
-        self.mdp_client.send_goal(ExecutePolicyExtendedGoal(spec = model))
+        self.mdp_client.send_goal(ExecutePolicyGoal(spec = model))
         self.mdp_client.wait_for_result()
         
     

@@ -18,7 +18,7 @@ def create_ltl_policy_goal(ltl_formula):
     """
     Create an actionlib goal to execute the given LTL formula.
     """
-    return ExecutePolicyExtendedGoal(spec = create_ltl_task_spec(ltl_formula))
+    return ExecutePolicyGoal(spec = create_ltl_task_spec(ltl_formula))
 
 def mdp_exec_feedback(feedback):
     # print feedback
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     announcement = "Hello everyone. Please go to the meeting room, the meeting is about to start."
 
     # The list of waypoints to speak at
-    waypoints = ['WayPoint1', 'WayPoint2']
+    waypoints = ['WayPoint8', 'WayPoint2']
     
     
     
@@ -100,10 +100,10 @@ if __name__ == '__main__':
            
     mdp_spec.ltl_task = mdp_spec.ltl_task[:-3]
 
-    goal = ExecutePolicyExtendedGoal(spec = mdp_spec)
+    goal = ExecutePolicyGoal(spec = mdp_spec)
 
     # contact the execution server
-    mdp_exec_client = actionlib.SimpleActionClient('mdp_plan_exec/execute_policy_extended', ExecutePolicyExtendedAction)
+    mdp_exec_client = actionlib.SimpleActionClient('mdp_plan_exec/execute_policy', ExecutePolicyAction)
     mdp_exec_client.wait_for_server()                                
 
     # send the goal

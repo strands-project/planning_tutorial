@@ -74,7 +74,7 @@ rosrun topological_navigation manual_edge_predictions.py `rospack find planning_
 Once this is running you can launch the MDP-based task executive system in (yet another!) new terminal:
 
 ```bash
-roslaunch mdp_plan_exec mdp_plan_exec_extended.launch
+roslaunch mdp_plan_exec mdp_plan_exec.launch
 ```
 
 

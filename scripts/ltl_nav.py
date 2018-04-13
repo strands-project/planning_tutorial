@@ -16,7 +16,7 @@ def create_ltl_policy_goal(ltl_formula):
     """
     Create an actionlib goal to execute the given LTL formula.
     """
-    return ExecutePolicyExtendedGoal(spec = create_ltl_task_spec(ltl_formula))
+    return ExecutePolicyGoal(spec = create_ltl_task_spec(ltl_formula))
 
 def mdp_exec_feedback(feedback):
     # print feedback
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     goal = create_ltl_policy_goal(goal_formula)
 
     # contact the execution server
-    mdp_exec_client = actionlib.SimpleActionClient('mdp_plan_exec/execute_policy_extended', ExecutePolicyExtendedAction)
+    mdp_exec_client = actionlib.SimpleActionClient('mdp_plan_exec/execute_policy', ExecutePolicyAction)
     mdp_exec_client.wait_for_server()                                
 
     # send the goal
