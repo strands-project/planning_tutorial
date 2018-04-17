@@ -1,12 +1,12 @@
 # Support
 
-If you have difficulty following the steps in this document, please either contact Bruno Lacerda (b.lacerda@cs.bham.ac.uk) or Nick Hawes (n.a.hawes@cs.bham.ac.uk) or use the gitter chat at https://gitter.im/strands-project/planning_tutorial
+If you have difficulty following the steps in this document, please either contact Bruno (bruno@robots.ax.ac.uk) or Nick (nickh@robots.ox.ac.uk) or use the rocket chat channel at https://mrgrocket.oxfordrobots.com/channel/planning_tutorial
 
 # Computer Setup 
 
 To take part in the practical session of the tutorial, you will need to have your own laptop configured with the following software.
 
-1. Install Ubuntu Linux 16.04LTS 64bit on your computer. Please make sure that you have exactly this version installed: 16.04 for 64bit. Download the image from here: http://releases.ubuntu.com/16.04/ (the image download is ubuntu-16.04.3-desktop-amd64.iso). Note, that you can perfectly install Ubuntu 16.04 alongside an existing operating system (even on a MacBook), or you could run this in a virtual machine.
+1. Install Ubuntu Linux 16.04LTS 64bit on your computer. Please make sure that you have exactly this version installed: 16.04 for 64bit. Download the image from here: http://releases.ubuntu.com/16.04/ (the image download is ubuntu-16.04.4-desktop-amd64.iso). Note, that you can perfectly install Ubuntu 16.04 alongside an existing operating system (even on a MacBook), or you could run this in a virtual machine.
 
 2. Within Ubuntu, follow the instructions at https://github.com/LCAS/rosdistro/wiki to install both ROS Kinetic and the STRANDS software packages. We assume a basic understanding of Unix-like operating systems and shell usage here. If you need help using the command line, this might be a good start: https://help.ubuntu.com/community/UsingTheTerminal. 
 The relevant installation steps are copied below for your convenience:
@@ -19,14 +19,13 @@ The relevant installation steps are copied below for your convenience:
        `curl -s http://lcas.lincoln.ac.uk/repos/public.key | sudo apt-key add -`
         2. Add the STRANDS repository: `sudo apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main`
     3. update your index: `sudo apt-get update`
-    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-ui ros-kinetic-strands-navigation  ros-kinetic-mdp-plan-exec python-catkin-tools`
+    4. install required packages: `sudo apt-get install libgmp-dev openjdk-8-jdk ros-kinetic-desktop-full ros-kinetic-strands-morse ros-kinetic-strands-ui ros-kinetic-strands-navigation  ros-kinetic-task-executor python-catkin-tools`
 
 3. Try out the “MORSE” simulator (run all the following in your terminal): 
     1. configure ROS: `source /opt/ros/kinetic/setup.bash`
     2. launch the simulator: `roslaunch strands_morse tsc_fast_morse.launch`
     You should see the Morse simulator popping up with our robot platform being configured. 
-If your laptop uses an NVidia graphics card it might be worth looking at: https://wiki.ubuntu.com/Bumblebee to use it to its full potential.
-You should be all set now!
+
 
 4. Add the line `source /opt/ros/kinetic/setup.bash` to your `.bashrc` if you want ROS to be be loaded every time you open a terminal. You will be opening a few terminals, *so this is advisable*. Also, source it on the current terminal session:
 
