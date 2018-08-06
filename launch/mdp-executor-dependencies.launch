@@ -1,0 +1,19 @@
+<launch>
+  <arg name="interruptible_wait" default="true"/>
+  <arg name="combined_sort" default="false"/>
+  <arg name="close_windows" default="true"/>
+  <arg name="allowable_lateness" default="300"/>
+  <arg name="door_config_file" default=""/>
+  
+  <!-- run mdp plan exec -->
+  <include file="$(find mdp_plan_exec)/launch/mdp_plan_exec_extended.launch">
+    <arg name="door_config_file" value="$(arg door_config_file)"/>
+  </include>
+
+  
+    <!-- Utility node used for generating wait behaviours -->
+  <node pkg="wait_action" type="wait_node.py" name="wait_action"  output="screen">    
+    <param name="interruptible" type="bool" value="$(arg interruptible_wait)" />
+  </node>
+
+</launch>

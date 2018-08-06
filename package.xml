@@ -56,8 +56,6 @@
   <run_depend>task_executor</run_depend>
   <run_depend>topological_navigation</run_depend>
   <run_depend>topological_utils</run_depend>
-  <run_depend>semantic_map_launcher</run_depend>
-  <run_depend>semantic_map_launcher</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
