@@ -25,6 +25,7 @@ wstool init
 ```bash
 cd $WS_ROOT_DIR/src
 curl https://raw.githubusercontent.com/strands-project/planning_tutorial/ori/config/tut_dev.rosinstall | wstool merge -k -y -
+wstool update
 ```
 
 7. In your catkin worskpace, blacklist some packages which can be problematic to build:
