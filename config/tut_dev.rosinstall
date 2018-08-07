@@ -1,0 +1,15 @@
+- git:
+    local-name: planning_tutorial
+    uri: https://github.com/strands-project/planning_tutorial
+- git:
+    local-name: strands_executive
+    uri: https://github.com/strands-project/strands_executive
+- git:
+    local-name: strands_navigation
+    uri: https://github.com/strands-project/strands_navigation
+- git:
+    local-name: strands_recovery_behaviours
+    uri: https://github.com/strands-project/strands_recovery_behaviours
+- git:
+    local-name: strands_social
+    uri: https://github.com/strands-project/strands_social
