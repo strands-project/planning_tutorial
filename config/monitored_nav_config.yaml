@@ -1,0 +1,45 @@
+#config file for adding the strands specific recovery berhaviours to the monitored navigation state machine
+nav_recovery:
+    package: strands_monitored_nav_states
+    recovery_file: recover_nav
+    recovery_class: RecoverNav
+monitor_recovery_pairs:
+    -   name: bumper
+        package: strands_monitored_nav_states
+        monitor_file: monitor_bumper
+        monitor_class: MonitorBumper
+        recovery_file: recover_bumper
+        recovery_class: RecoverBumper
+    -   name: stuck_on_carpet
+        package: strands_monitored_nav_states
+        monitor_file: monitor_stuck_on_carpet
+        monitor_class: MonitorStuckOnCarpet
+        recovery_file: recover_stuck_on_carpet_backtrack_help
+        recovery_class: RecoverStuckOnCarpetBacktrackHelp
+    -   name: magnetic_strip
+        package: strands_monitored_nav_states
+        monitor_file: monitor_magnetic_strip
+        monitor_class: MonitorMagneticStrip
+        recovery_file: recover_magnetic_strip
+        recovery_class: RecoverMagneticStrip
+    -   name: pad_pause_nav
+        package: strands_monitored_nav_states
+        monitor_file: monitor_pause
+        monitor_class: MonitorPause
+        recovery_file: pause_state
+        recovery_class: PauseState
+    -   name: service_pause_nav
+        package: monitored_navigation
+        monitor_file: monitor_srv_pause
+        monitor_class: MonitorSrvPause
+        recovery_file: pause_srv_state
+        recovery_class: PauseSrvState
+human_help:
+    -   name: speech
+        package: strands_human_help
+        helper_file: help_speech
+        helper_class: HelpSpeech
+    -   name: screen
+        package: strands_human_help
+        helper_file: help_screen
+        helper_class: HelpScreen
