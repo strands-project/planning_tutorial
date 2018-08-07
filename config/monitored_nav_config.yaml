@@ -14,7 +14,7 @@ monitor_recovery_pairs:
         package: strands_monitored_nav_states
         monitor_file: monitor_stuck_on_carpet
         monitor_class: MonitorStuckOnCarpet
-        recovery_file: recover_stuck_on_carpet_backtrack_help
+        recovery_file: recover_stuck_on_carpet
         recovery_class: RecoverStuckOnCarpetBacktrackHelp
     -   name: magnetic_strip
         package: strands_monitored_nav_states

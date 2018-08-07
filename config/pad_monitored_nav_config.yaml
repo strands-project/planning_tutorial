@@ -1,0 +1,9 @@
+#config file for adding the strands specific recovery berhaviours to the monitored navigation state machine
+monitor_recovery_pairs:
+    -   name: pad_pause_nav
+        package: strands_monitored_nav_states
+        monitor_file: monitor_pause
+        monitor_class: MonitorPause
+        recovery_file: pause_state
+        recovery_class: PauseState
+

@@ -1,0 +1,21 @@
+#config file for adding the strands specific recovery berhaviours to the monitored navigation state machine
+nav_recovery:
+    package: strands_monitored_nav_states
+    recovery_file: recover_nav
+    recovery_class: RecoverNavHelpOnly
+monitor_recovery_pairs:
+    -   name: stuck_on_carpet
+        package: strands_monitored_nav_states
+        monitor_file: monitor_stuck_on_carpet
+        monitor_class: MonitorStuckOnCarpet
+        recovery_file: recover_stuck_on_carpet
+        recovery_class: RecoverStuckOnCarpetBacktrackHelp
+human_help:
+    -   name: speech
+        package: strands_human_help
+        helper_file: help_speech
+        helper_class: HelpSpeech
+    -   name: screen
+        package: strands_human_help
+        helper_file: help_screen
+        helper_class: HelpScreen
