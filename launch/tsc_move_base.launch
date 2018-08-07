@@ -6,11 +6,6 @@
   <!-- 2D continuous navigation -->
   <include file="$(find strands_morse)/tsc/launch/tsc_nav2d.launch">
   </include>
-  
-  <!-- Monitored navigation -->
-  <include file="$(find planning_tutorial)/launch/monitored_navigation.launch"/> 
  
-  <!-- Topological navigation -->
-  <include file="$(find planning_tutorial)/launch/topological_navigation.launch"/> 
    
 </launch>

@@ -1,0 +1,27 @@
+<launch>
+
+
+	<arg name="recoveries" default="false" />
+
+	<arg name="mon_nav_config_file" if="$(arg recoveries)" default="$(find planning_tutorial)/config/monitored_nav_config.yaml" />
+	<arg name="mon_nav_config_file" unless="$(arg recoveries)" default="" />	
+
+	<arg name="max_bumper_recoveries" default=".inf"/>
+	<arg name="wait_reset_bumper_duration" default="0.0"/>
+
+	<!-- requirements for recovery actions -->
+	<group if="$(arg recoveries)">
+		<include file="$(find backtrack_behaviour)/launch/backtrack.launch"/> 
+		<include file="$(find mary_tts)/launch/ros_mary.launch"/> 
+		<include file="$(find strands_webserver)/launch/webserver_dependencies.launch"/> 
+		<node pkg="strands_webserver" type="strands_webserver" name="strands_webserver"/>
+	</group>
+
+ 	<node pkg="monitored_navigation" type="monitored_nav.py" name="monitored_nav" output="screen" args="$(arg mon_nav_config_file)">
+		<param name="wait_reset_bumper_duration" value="$(arg wait_reset_bumper_duration)"/>
+		<rosparam param="/monitored_navigation/recover_states/recover_bumper" subst_value="True">[True, $(arg max_bumper_recoveries)]</rosparam>
+	</node>
+
+
+
+</launch>
