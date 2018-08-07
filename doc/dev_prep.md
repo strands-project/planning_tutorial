@@ -2,7 +2,7 @@
 
 To go beyond the basic tutorial and do some development of your own code around either the STRANDS planning or navigation systems, you will need some additional dependencies and setup. This file explains the current approach needed to run monitored navigation and recovery behaviours in a ROS Kinetic system on Ubuntu 16.04.
 
-1. First complete the steps outlined in [[tutorial_prep.md]]
+1. First complete the steps outlined in [tutorial_prep.md]
 
 2. Then follow [One time setup on a computer (by sys admin)](https://github.com/LCAS/rosdistro/wiki#one-time-setup-on-a-computer-by-sys-admin) and [
 One time setup in a user's account (for a developer)](https://github.com/LCAS/rosdistro/wiki#one-time-setup-in-a-users-account-for-a-developer) from the [LCAS rosdistro wiki](https://github.com/LCAS/rosdistro/wiki)
@@ -42,3 +42,5 @@ catkin build
 ```bash
 source $WS_ROOT_DIR/devel/setup.bash
 ```
+
+
