@@ -28,10 +28,7 @@ Panels:
     SyncMode: 0
     SyncSource: LaserScan
   - Class: topological_rviz_tools/TopologicalMap
-    Expanded:
-      - /Node1
-      - /Node1/Pose1
-      - /Node1/Pose1/Orientation1
+    Expanded: ~
     Name: TopologicalMap
     Splitter Ratio: 0.5
 Visualization Manager:
@@ -363,10 +360,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.05479658
+      Pitch: 1.52979648
       Target Frame: map
       Value: XYOrbit (rviz)
-      Yaw: 4.37440252
+      Yaw: 4.64940262
     Saved: ~
 Window Geometry:
   Displays:
@@ -386,5 +383,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 2209
-  X: 890
-  Y: 344
+  X: 808
+  Y: 602

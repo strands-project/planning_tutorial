@@ -14,32 +14,43 @@ One time setup in a user's account (for a developer)](https://github.com/LCAS/ro
 strands-twython:
   ubuntu: [python-twython]
 ```
+then update your rosdeps
+```
+rosdep update
+```
 
-5. Initialise the source dir your catkin workspace for use with `wstool` in order to automatically manage source repos.
+5. Install some relevant extra packages:
+```bash
+sudo apt-get install tmux python-catkin-tools
+```
+
+6. Initialise the source dir your catkin workspace for use with `wstool` in order to automatically manage source repos.
 ```bash
 cd $WS_ROOT_DIR/src
 wstool init
 ```
 
-6. Bring in the extra source needed for running and developing parts of the STRANDS executive behaviour stack:
+7. Bring in the extra source needed for running and developing parts of the STRANDS executive behaviour stack:
 ```bash
 cd $WS_ROOT_DIR/src
 curl https://raw.githubusercontent.com/strands-project/planning_tutorial/ori/config/tut_dev.rosinstall | wstool merge -k -y -
 wstool update
 ```
 
-7. In your catkin worskpace, blacklist some packages which can be problematic to build:
+8. In your catkin worskpace, blacklist some packages which can be problematic to build:
 ```
 cd $WS_ROOT_DIR
 catkin config --blacklist scheduler scipoptsuite datamatrix_read
 ```
 
-8. Rebuild 
+9. Make sure you have the dependencies installed then rebuild your workspace:
 ```bash
+cd $WS_ROOT_DIR
+rosdep install --from-paths src --ignore-src -y
 catkin build
 ```
 
-9. Resource
+10. Re-source the updated workspace:
 ```bash
 source $WS_ROOT_DIR/devel/setup.bash
 ```

@@ -14,6 +14,7 @@ tmux new-window -t $SESSION:3 -n 'move_base'
 tmux new-window -t $SESSION:4 -n 'monitored_nav'
 tmux new-window -t $SESSION:5 -n 'topo_nav'
 tmux new-window -t $SESSION:6 -n 'exec'
+tmux new-window -t $SESSION:7 -n 'behaviour'
 
 
 
@@ -67,13 +68,18 @@ tmux select-window -t $SESSION:6
 tmux split-window -v
 tmux select-pane -t 0
 [ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
-tmux send-keys "roslaunch task_executor mdp-executor.launch combined_sort:=true"
+tmux send-keys "roslaunch --wait planning_tutorial just-mdp-executor.launch combined_sort:=true"
+tmux select-pane -t 1
+[ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
+tmux send-keys "roslaunch --wait planning_tutorial mdp-executor-dependencies.launch"
+
+tmux select-window -t $SESSION:7
+tmux split-window -v
+tmux select-pane -t 0
+[ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
 tmux select-pane -t 1
 [ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
 tmux send-keys "rosrun planning_tutorial coffee_delivery_fill.py"
-
-
-
 
 
 # Set default window
