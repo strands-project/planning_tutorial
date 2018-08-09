@@ -19,9 +19,9 @@ then update your rosdeps
 rosdep update
 ```
 
-5. Install some relevant extra packages:
+5. Install some extra necessary packages:
 ```bash
-sudo apt-get install tmux python-catkin-tools
+sudo apt-get install tmux python-catkin-tools python-tabulate
 ```
 
 6. Initialise the source dir your catkin workspace for use with `wstool` in order to automatically manage source repos.
