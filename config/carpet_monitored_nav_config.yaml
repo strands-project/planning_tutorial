@@ -2,7 +2,7 @@
 nav_recovery:
     package: strands_monitored_nav_states
     recovery_file: recover_nav
-    recovery_class: RecoverNavHelpOnly
+    recovery_class: RecoverNav
 monitor_recovery_pairs:
     -   name: stuck_on_carpet
         package: strands_monitored_nav_states

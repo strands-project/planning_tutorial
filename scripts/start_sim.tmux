@@ -48,7 +48,7 @@ tmux select-window -t $SESSION:4
 tmux split-window -v
 tmux select-pane -t 0
 [ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
-tmux send-keys "roslaunch planning_tutorial monitored_navigation.launch recoveries:=true mon_nav_config_file:=`rospack find planning_tutorial`/config/pad_monitored_nav_config.yaml"
+tmux send-keys "roslaunch planning_tutorial monitored_navigation.launch recoveries:=true mon_nav_config_file:=`rospack find planning_tutorial`/config/carpet_monitored_nav_config.yaml"
 tmux select-pane -t 1
 [ -f $DEVELOPMENT_WS ] && `$_SRC_ENV`
 tmux send-keys "rosrun smach_viewer smach_viewer.py"
